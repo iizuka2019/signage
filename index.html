@@ -143,10 +143,6 @@ $(function(){
 
     <script>
     //書き込み処理
-      var today = new Date();
-      var strYear=today.getFullYear();
-      var strMonth=today.getMonth()+1;
-      var strDate=today.getDate();
             
       var db = firebase.database();
       
@@ -176,9 +172,7 @@ $(function(){
 <p class="wf-roundedmplus1c">
 	<nav class="gnav">
 		 <ul class="gnav__menu">
-			<li class="gnav__menu__leftitem"><a href="http://cilicill.com/index.html"><i class="fa fa-home fa-lg"></i></a></li>
 			<li class="gnav__menu__centeritem">スマートクッション(仮)</li>
-			<li class="gnav__menu__rightitem"><a href="http://cilicill.com/graph.html"><i class="fa fa-bar-chart fa-lg"></i></a></li>
 		</ul>
 	</nav>
 </p>
@@ -194,7 +188,6 @@ $(function(){
       <td colspan="2" align="center"><span id="status"  ></span></td>
     </tr>
   </table>
-      <input type="HIDDEN" name="TargetDate" id="TargetDate-text" >
     <hr />
 </p>
 
@@ -205,27 +198,12 @@ $(function(){
 <p class="wf-roundedmplus1c">  
       <table class="device-info-table">
         <tr>
-	<th class="table_data_th">性別：</th>
-          <td class="table_data_td">
-		  <form id="gender">
-			<input type="radio" name="genders" class="liffRadio" value="male" onchange="changeData()">男性
-			<input type="radio" name="genders" class="liffRadio" value="female" onchange="changeData()">女性
-		  </form>
-          </td>
-        </tr>
-        <tr>
           <th class="table_data_th">背景色：</th>
           <td class="table_data_td">
 			<input type="tel" class="liffinput" name="bgcolor" maxlength="6" id="txtbgcolor" onchange="changeData()">
 		</td>
         </tr>
 	      
-        <tr>
-          <th class="table_data_th">体重：</th>
-          <td class="table_data_td">
-		  <input type="tel" class="liffinput"  name="weight" maxlength="3" id="weight-text" onchange="changeData()"> kg
-          </td>
-        </tr>
       </table>
     
 </p>
