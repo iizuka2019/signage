@@ -148,7 +148,7 @@ $(function(){
       
       var myChatAll = db.ref("/");
       function changeData(){
-        var txtbgcolor = document.getElementById("txtbgcolor").value;
+       // var txtbgcolor = document.getElementById("txtbgcolor").value;
         //var txtWeight = document.getElementById("weight-text").value;        
         //var element = document.getElementById("gender") ;
         //var elements = element.genders ;
@@ -163,7 +163,7 @@ $(function(){
         //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight});
 	      
 	var updates = {};
-	updates[bgcolor] = txtbgcolor;
+	updates[bgcolor] = document.getElementById("txtbgcolor").value;
 	myChatAll.update(updates)
 	//myChatAll.updates[bgcolor] = txtbgcolor;
         //myChatAll.set({bgcolor:txtbgcolor});
