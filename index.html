@@ -168,20 +168,6 @@ $(function(){
       }
       
     </script>
-    <script>
-      function handlerToggleLed(strLR) {
-        if(strLR == "left"){
-          var today = document.getElementById("TargetDate-text").innerHTML;
-          today.setDate(today.getDate() - 1);          
-          
-          var strYear=today.getFullYear();
-          var strMonth=today.getMonth()+1;
-          var strDay=today.getDate();
-          
-          document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
-        }
-      }
-    </script>
     
     <!-- Title -->
   
@@ -227,9 +213,9 @@ $(function(){
           </td>
         </tr>
         <tr>
-          <th class="table_data_th">年齢：</th>
+          <th class="table_data_th">背景色：</th>
           <td class="table_data_td">
-			<input type="tel" class="liffinput" name="bgcolor" maxlength="6" id="txtbgcolor" onchange="changeData()"> 才
+			<input type="tel" class="liffinput" name="bgcolor" maxlength="6" id="txtbgcolor" onchange="changeData()">
 		</td>
         </tr>
 	      
