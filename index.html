@@ -148,7 +148,7 @@ $(function(){
       
       var myChatAll = db.ref("/");
       function changeData(){
-       // var txtbgcolor = document.getElementById("txtbgcolor").value;
+        var txtbgcolor = document.getElementById("txtbgcolor").value;
         //var txtWeight = document.getElementById("weight-text").value;        
         //var element = document.getElementById("gender") ;
         //var elements = element.genders ;
@@ -161,10 +161,13 @@ $(function(){
         //}
         //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight,weight:"0.1",Sittingtime:"16" ,Standtime:"41"});
         //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight});
-	      
+	var postData = {
+	    bgcolor: txtbgcolor
+	};	      
 	var updates = {};
-	updates[bgcolor] = document.getElementById("txtbgcolor").value;
-	myChatAll.update(updates)
+	updates['/'] = postData;
+	firebase.database().ref().update(updates);	      
+	//myChatAll.update(updates)
 	//myChatAll.updates[bgcolor] = txtbgcolor;
         //myChatAll.set({bgcolor:txtbgcolor});
 	      
