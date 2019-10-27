@@ -149,6 +149,11 @@ $(function(){
       var myChatAll = db.ref("/");
       function changeData(){
         var txtbgcolor = document.getElementById("txtbgcolor").value;
+
+myChatAll.update({
+    'bgcolor': txtbgcolor //更に子の要素にアクセスするには / で区切って指定
+});
+	      
         //var txtWeight = document.getElementById("weight-text").value;        
         //var element = document.getElementById("gender") ;
         //var elements = element.genders ;
@@ -161,12 +166,12 @@ $(function(){
         //}
         //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight,weight:"0.1",Sittingtime:"16" ,Standtime:"41"});
         //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight});
-	var postData = {
-	    bgcolor: txtbgcolor
-	};	      
-	var updates = {};
-	updates['/'] = postData;
-	firebase.database().ref().update(updates);	      
+	//var postData = {
+	//    bgcolor: txtbgcolor
+	//};	      
+	//var updates = {};
+	//updates['/'] = postData;
+	//firebase.database().ref().update(updates);	      
 	//myChatAll.update(updates)
 	//myChatAll.updates[bgcolor] = txtbgcolor;
         //myChatAll.set({bgcolor:txtbgcolor});
