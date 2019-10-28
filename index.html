@@ -154,7 +154,6 @@ myChatAll.update({
     'bgcolor': txtbgcolor //更に子の要素にアクセスするには / で区切って指定
 });
 	      
-        //var txtWeight = document.getElementById("weight-text").value;        
         //var element = document.getElementById("gender") ;
         //var elements = element.genders ;
         //var strGender =  "";
@@ -215,6 +214,81 @@ myChatAll.update({
           <th class="table_data_th">背景色：</th>
           <td class="table_data_td">
 			<input type="tel" class="liffinput" name="bgcolor" maxlength="6" id="txtbgcolor" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">文字色：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="fontcolor" maxlength="6" id="txtfontcolor" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">フォント名：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="font" maxlength="20" id="txtfont" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">フォントサイズ：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="fontsize" maxlength="20" id="txtfontsize" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">ヘッダー：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="heddermessage" maxlength="20" id="txtHead" onchange="changeData()">
+		</td>
+        </tr>
+	      
+        <tr>
+          <th class="table_data_th">リロード時間：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="reloadtime" maxlength="20" id="txtReload" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">スクロール速度：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="scrollamount" maxlength="20" id="txtScroll" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">日時表示：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="timedateflg" maxlength="20" id="txtTimedateflg" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">温度表示：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="temperatureflg" maxlength="20" id="txtTemperatureflg" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">湿度表示：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="humidityflg" maxlength="20" id="txtHumidityflg" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">湿度調整：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="temperaturecor" maxlength="3" id="txtTemperaturecor" onchange="changeData()">
+		</td>
+        </tr>
+	      
+	      
+        <tr>
+          <th class="table_data_th">不快指数表示：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="discomfortindexflg" maxlength="20" id="txtDiscomfortindexflg" onchange="changeData()">
+		</td>
+        </tr>
+        <tr>
+          <th class="table_data_th">フッター：</th>
+          <td class="table_data_td">
+			<input type="tel" class="liffinput" name="footermessage" maxlength="20" id="txtFootermessage" onchange="changeData()">
 		</td>
         </tr>
 	      
