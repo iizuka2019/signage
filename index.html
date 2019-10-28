@@ -130,6 +130,17 @@ $(function(){
       var myChatAll = db.ref("/");
       function changeData(){
         var txtbgcolor = document.getElementById("txtbgcolor").value;
+        var txtfontcolor = document.getElementById("txtfontcolor").value;
+        var txtfontsize = document.getElementById("txtfontsize").value;
+        var txtfont = document.getElementById("txtfont").value;
+        var txtHead = document.getElementById("txtHead").value;
+        var txtReload = document.getElementById("txtReload").value;
+        var txtTimedateflg = document.getElementById("txtTimedateflg").value;
+        var txtTemperatureflg = document.getElementById("txtTemperatureflg").value;
+        var txtHumidityflg = document.getElementById("txtHumidityflg").value;
+        var txtTemperaturecor = document.getElementById("txtTemperaturecor").value;
+        var txtDiscomfortindexflg = document.getElementById("txtDiscomfortindexflg").value;
+        var txtFootermessage = document.getElementById("txtFootermessage").value;
 
 myChatAll.update({
     'bgcolor': txtbgcolor,
