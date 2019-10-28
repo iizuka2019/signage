@@ -21,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>MyPage</title>
+  <title>さいねーじ</title>
 
     <style type="text/css">
       .gnav__menu{
@@ -109,6 +109,7 @@ $(function(){
         document.getElementById("txtHumidityflg").value = snapshot.child("humidityflg").val();
         document.getElementById("txtTemperaturecor").value = snapshot.child("temperaturecor").val();
         document.getElementById("txtDiscomfortindexflg").value = snapshot.child("discomfortindexflg").val();
+        document.getElementById("txtCssymargin").value = snapshot.child("cssymargin").val();
         document.getElementById("txtFootermessage").value = snapshot.child("footermessage").val();
 	      
     });
@@ -142,6 +143,7 @@ $(function(){
         var txtDiscomfortindexflg = document.getElementById("txtDiscomfortindexflg").value;
         var txtFootermessage = document.getElementById("txtFootermessage").value;
         var txtScroll = document.getElementById("txtScroll").value;
+        var txtCssymargin = document.getElementById("txtCssymargin").value;
 
 myChatAll.update({
     'bgcolor': txtbgcolor,
@@ -156,12 +158,10 @@ myChatAll.update({
     'temperaturecor': txtTemperaturecor,
     'discomfortindexflg': txtDiscomfortindexflg,
     'scrollamount': txtScroll,
+    'cssymargin': txtCssymargin,
     'footermessage': txtFootermessage
 });
 	      
-        //var element = document.getElementById("gender") ;
-        //var elements = element.genders ;
-        //var strGender =  "";
 
         //if (elements[0].checked == true){
         //  strGender = 'male' ;
@@ -289,6 +289,12 @@ myChatAll.update({
           <th class="table_data_th">不快指数表示：</th>
 		<td class="table_data_td">
 		  <input type="tel" class="liffinput" name="discomfortindexflg" maxlength="20" id="txtDiscomfortindexflg" onchange="changeData()">
+		</td>		
+        </tr>
+        <tr>
+          <th class="table_data_th">余白：</th>
+		<td class="table_data_td">
+		  <input type="tel" class="liffinput" name="cssymargin" maxlength="20" id="txtCssymargin" onchange="changeData()">
 		</td>		
         </tr>
         <tr>
