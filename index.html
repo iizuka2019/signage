@@ -94,42 +94,13 @@ $(function(){
     </script>
     
     <script>
-    //読み込み処理
-      var today = new Date();
-      var strYear=today.getFullYear();
-      var strMonth=today.getMonth()+1;
-      var strDay=today.getDate();
-      var strDataW = '0';
-      
+    //読み込み処理      
       
       firebase.database().ref('/').on('value',function(snapshot) {
         document.getElementById("txtbgcolor").value = snapshot.child("bgcolor").val();
-        //document.getElementById("weight-text").value = snapshot.child("myweight").val();        
-        //var strGender =  snapshot.child("genders").val();
-        //var element = document.getElementById("gender") ;
-        //var elements = element.genders ;
-        //  if (strGender=='male'){
-        //    elements[0].checked = true ;
-        //  }else{
-        //    elements[1].checked = true ;
-        //  }
-        
-        //$( document ).ready(function() { // 6,32 5,38 2,34
-        //   var svg=document.getElementById('test-circle7');
-        //  while (svg.firstChild)
-        //  svg.removeChild(svg.firstChild);
-          
-        //$("#test-circle7").circliful({
-        //    animation: 0,
-        //    animationStep: 1,
-        //    animateInView: true,
-        //    percent: strDataW,
-        //    textSize: 28,
-        //    textStyle: 'font-size: 12px;',
-        //    textColor: '#666',
-        //    progressColor: {10: '#00A0E9', 20: '#009E96', 30: '#009944', 40: '#8FC31F', 50: '#FFF100', 60: '#F39800', 70: '#EA5532', 80: '#EA5532', 90:'#E91E63', 100:'#f44336'}
-        //});
-      // });
+        document.getElementById("txtfontcolor").value = snapshot.child("fontcolor").val();
+        document.getElementById("txtfontsize").value = snapshot.child("fontsize").val();
+        document.getElementById("txtfont").value = snapshot.child("font").val();
     });
     
 
@@ -217,73 +188,40 @@ myChatAll.update({
           <th class="table_data_th">文字色：<input type="tel" class="liffinput" name="fontcolor" maxlength="6" id="txtfontcolor" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">フォント名：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="font" maxlength="20" id="txtfont" onchange="changeData()">
-		</td>
+          <th class="table_data_th">フォント名：<input type="tel" class="liffinput" name="font" maxlength="20" id="txtfont" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">フォントサイズ：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="fontsize" maxlength="20" id="txtfontsize" onchange="changeData()">
-		</td>
+          <th class="table_data_th">フォントサイズ：<input type="tel" class="liffinput" name="fontsize" maxlength="20" id="txtfontsize" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">ヘッダー：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="heddermessage" maxlength="20" id="txtHead" onchange="changeData()">
-		</td>
+          <th class="table_data_th">ヘッダー：<input type="tel" class="liffinput" name="heddermessage" maxlength="20" id="txtHead" onchange="changeData()"></th>
         </tr>
 	      
         <tr>
-          <th class="table_data_th">リロード時間：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="reloadtime" maxlength="20" id="txtReload" onchange="changeData()">
-		</td>
+          <th class="table_data_th">リロード時間：<input type="tel" class="liffinput" name="reloadtime" maxlength="20" id="txtReload" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">スクロール速度：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="scrollamount" maxlength="20" id="txtScroll" onchange="changeData()">
-		</td>
+          <th class="table_data_th">スクロール速度：<input type="tel" class="liffinput" name="scrollamount" maxlength="20" id="txtScroll" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">日時表示：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="timedateflg" maxlength="20" id="txtTimedateflg" onchange="changeData()">
-		</td>
+          <th class="table_data_th">日時表示：<input type="tel" class="liffinput" name="timedateflg" maxlength="20" id="txtTimedateflg" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">温度表示：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="temperatureflg" maxlength="20" id="txtTemperatureflg" onchange="changeData()">
-		</td>
+          <th class="table_data_th">温度表示：<input type="tel" class="liffinput" name="temperatureflg" maxlength="20" id="txtTemperatureflg" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">湿度表示：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="humidityflg" maxlength="20" id="txtHumidityflg" onchange="changeData()">
-		</td>
+          <th class="table_data_th">湿度表示：<input type="tel" class="liffinput" name="humidityflg" maxlength="20" id="txtHumidityflg" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">湿度調整：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="temperaturecor" maxlength="3" id="txtTemperaturecor" onchange="changeData()">
-		</td>
+          <th class="table_data_th">湿度調整：<input type="tel" class="liffinput" name="temperaturecor" maxlength="3" id="txtTemperaturecor" onchange="changeData()"></th>
         </tr>
 	      
 	      
         <tr>
-          <th class="table_data_th">不快指数表示：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="discomfortindexflg" maxlength="20" id="txtDiscomfortindexflg" onchange="changeData()">
-		</td>
+          <th class="table_data_th">不快指数表示：<input type="tel" class="liffinput" name="discomfortindexflg" maxlength="20" id="txtDiscomfortindexflg" onchange="changeData()"></th>
         </tr>
         <tr>
-          <th class="table_data_th">フッター：</th>
-          <td class="table_data_td">
-			<input type="tel" class="liffinput" name="footermessage" maxlength="20" id="txtFootermessage" onchange="changeData()">
-		</td>
+          <th class="table_data_th">フッター：<input type="tel" class="liffinput" name="footermessage" maxlength="20" id="txtFootermessage" onchange="changeData()"></th>
         </tr>
 	      
       </table>
