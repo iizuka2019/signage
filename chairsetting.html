@@ -130,7 +130,9 @@ $(function(){
       var myChatAll = db.ref("/6606-0786/");
       function changeData(){
         var txtcolor = document.getElementById("txtcolor").value;
-
+	if(txtcolor=="いかり"){
+		txtcolor="1"
+	}
 	var element = document.getElementById("Vibration") ;
         var elements = element.Vibrations ;
         var strVibration =  "";
@@ -186,6 +188,9 @@ myChatAll.update({
       <th class="table_data_th">色：</th>
       <td class="table_data_td">
       <input type="tel" class="liffinput" name="color" maxlength="3" id="txtcolor" onchange="changeData()">
+    </td>
+      <td class="table_data_td">
+      <input type="button" class="liffinput" name="color" value="いかり"  id="txtcolor" onchange="changeData()">
     </td>
     </tr>
 	<tr>
