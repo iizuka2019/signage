@@ -44,7 +44,8 @@
         var istand = 10;
         var iFlgStatus = 1;
         var iStrong=1;
-
+        var iVibration=0;
+      
       obniz.onconnect = async function () {
           var led = obniz.wired("WS2812B", {gnd:9, vcc: 10, din: 11});
           var color = [];
@@ -87,7 +88,7 @@
         
         
         var setvibration = function(){
-          if(istand==10){
+          if(iVibration==1){
             obniz.io7.output(false);
             // IO6をVINとして使う
             obniz.io6.drive('5v');
@@ -115,6 +116,7 @@
                 istand = snapshot.child("iValue").val();  
                 iFlgStatus = snapshot.child("iFlg").val();  
                 iStrong = snapshot.child("iStrong").val();  
+                iVibration = snapshot.child("iVibration").val();  
                });
             
           };
