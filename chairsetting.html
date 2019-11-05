@@ -132,7 +132,21 @@ $(function(){
         var txtcolor = document.getElementById("txtcolor").value;
         var txtcolorname = document.getElementById("txtcolorname").value;
 	if(txtcolorname=="いかり"){
-		txtcolor="1"
+		txtcolor=1
+	}else if(txtcolorname=="きたい"){
+		txtcolor=30
+	}else if(txtcolorname=="よろこび"){
+		txtcolor=60
+	}else if(txtcolorname=="しんらい"){
+		txtcolor=90
+	}else if(txtcolorname=="ふあん"){
+		txtcolor=120
+	}else if(txtcolorname=="むしん"){
+		txtcolor=160
+	}else if(txtcolorname=="かなしみ"){
+		txtcolor=200
+	}else if(txtcolorname=="けんお"){
+		txtcolor=260
 	}
 	var element = document.getElementById("Vibration") ;
         var elements = element.Vibrations ;
@@ -190,8 +204,29 @@ myChatAll.update({
       <td class="table_data_td">
       <input type="tel" class="liffinput" name="color" maxlength="3" id="txtcolor" onchange="changeData()">
     </td>
-      <td class="table_data_td">
+    <td class="table_data_td">
       <input type="button" class="liffinput" name="colorname" value="いかり"  id="txtcolorname" onclick="changeData()">
+    </td>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="きたい"  id="txtcolorname" onclick="changeData()">
+    </td>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="よろこび"  id="txtcolorname" onclick="changeData()">
+    </td>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="しんらい"  id="txtcolorname" onclick="changeData()">
+    </td>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="ふあん"  id="txtcolorname" onclick="changeData()">
+    </td>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="むしん"  id="txtcolorname" onclick="changeData()">
+    </td>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="かなしみ"  id="txtcolorname" onclick="changeData()">
+    </td>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="けんお"  id="txtcolorname" onclick="changeData()">
     </td>
     </tr>
 	<tr>
