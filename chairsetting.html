@@ -130,22 +130,22 @@ $(function(){
       var myChatAll = db.ref("/6606-0786/");
       function changeData(strColor){
         var txtcolor = document.getElementById("txtcolor").value;
-        var txtcolorname = document.getElementById("txtcolorname").value;
+        //var txtcolorname = document.getElementById("txtcolorname").value;
 	if(strColor=="いかり"){
 		txtcolor=1
-	}else if(txtcolorname=="きたい"){
+	}else if(strColor=="きたい"){
 		txtcolor=30
-	}else if(txtcolorname=="よろこび"){
+	}else if(strColor=="よろこび"){
 		txtcolor=60
-	}else if(txtcolorname=="しんらい"){
+	}else if(strColor=="しんらい"){
 		txtcolor=90
-	}else if(txtcolorname=="ふあん"){
+	}else if(strColor=="ふあん"){
 		txtcolor=120
-	}else if(txtcolorname=="むしん"){
+	}else if(strColor=="むしん"){
 		txtcolor=160
-	}else if(txtcolorname=="かなしみ"){
+	}else if(strColor=="かなしみ"){
 		txtcolor=200
-	}else if(txtcolorname=="けんお"){
+	}else if(strColor=="けんお"){
 		txtcolor=260
 	}
 	var element = document.getElementById("Vibration") ;
@@ -205,28 +205,28 @@ myChatAll.update({
       <input type="tel" class="liffinput" name="color" maxlength="3" id="txtcolor" onchange="changeData()">
     </td>
     <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="いかり"  id="txtcolorname" onclick="changeData('いかり')">
+      <input type="button" class="liffinput" name="colorname" id="txtcolorname" onclick="changeData('いかり')">
     </td>
     <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="きたい"  id="txtcolorname" onclick="changeData('きたい')">
+      <input type="button" class="liffinput" name="colorname" id="txtcolorname" onclick="changeData('きたい')">
     </td>
     <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="よろこび"  id="txtcolorname" onclick="changeData()">
+      <input type="button" class="liffinput" name="colorname"  id="txtcolorname" onclick="changeData('よろこび')">
     </td>
     <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="しんらい"  id="txtcolorname" onclick="changeData()">
+      <input type="button" class="liffinput" name="colorname"  id="txtcolorname" onclick="changeData('しんらい')">
     </td>
     <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="ふあん"  id="txtcolorname" onclick="changeData()">
+      <input type="button" class="liffinput" name="colorname" id="txtcolorname" onclick="changeData('ふあん')">
     </td>
     <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="むしん"  id="txtcolorname" onclick="changeData()">
+      <input type="button" class="liffinput" name="colorname"  id="txtcolorname" onclick="changeData('むしん')">
     </td>
     <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="かなしみ"  id="txtcolorname" onclick="changeData()">
+      <input type="button" class="liffinput" name="colorname" id="txtcolorname" onclick="changeData('かなしみ')">
     </td>
     <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="けんお"  id="txtcolorname" onclick="changeData()">
+      <input type="button" class="liffinput" name="colorname"  id="txtcolorname" onclick="changeData('けんお')">
     </td>
     </tr>
 	<tr>
