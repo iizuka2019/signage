@@ -108,6 +108,15 @@ $(function(){
             elements[1].checked = true ;
           }
 	      
+	var strHeater =  snapshot.child("iHeater").val();
+        var elementHeater = document.getElementById("Heater") ;
+        var elementHeaters = element.Heaters ;
+          if (strHeater=='1'){
+            elementHeaters[0].checked = true ;
+          }else{
+            elementHeaters[1].checked = true ;
+          }
+	      
         
 	      
 	      //iVibration
@@ -148,19 +157,30 @@ $(function(){
 	}else if(strColor=="けんお"){
 		txtcolor=260
 	}
-	var element = document.getElementById("Vibration") ;
-        var elements = element.Vibrations ;
-        var strVibration =  "";
 
+	var element = document.getElementById("Vibration") ;
+	var elements = element.Vibrations ;
+	var strVibration =  "";
         if (elements[0].checked == true){
           strVibration = '1' ;
         }else{
           strVibration = '0' ;
         }
 
+	var elementHeater = document.getElementById("Heater") ;
+	var elementHeaters = element.Heaters ;
+	var strHeater =  "";
+        if (elementHeaters[0].checked == true){
+          strHeater = '1' ;
+        }else{
+          strHeater = '0' ;
+        }
+	      
+	      
 myChatAll.update({
     'iValue': txtcolor,
-    'iVibration': strVibration
+    'iVibration': strVibration,
+    'iHeater': strHeater
 	
 });
 	      
@@ -255,14 +275,23 @@ myChatAll.update({
     </tr>
 	<tr>
 	<th class="table_data_th">バイブレーション：</th>
-          <td class="table_data_td">
+	  <td class="table_data_td">
 		  <form id="Vibration">
 			<input type="radio" name="Vibrations" class="liffRadio" value="1" onchange="changeData()">ON
 			<input type="radio" name="Vibrations" class="liffRadio" value="0" onchange="changeData()">OFF
 		  </form>
-          </td>
-        </tr>
+	  </td>
+	</tr>
 	  
+	<tr>
+	<th class="table_data_th">ヒーター：</th>
+	  <td class="table_data_td">
+		  <form id="Heater">
+			<input type="radio" name="Heaters" class="liffRadio" value="1" onchange="changeData()">ON
+			<input type="radio" name="Heaters" class="liffRadio" value="0" onchange="changeData()">OFF
+		  </form>
+	  </td>
+	</tr>
 
   </table>
     
