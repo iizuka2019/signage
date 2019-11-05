@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://obniz.io/js/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/obniz@2.4.0/obniz.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+  </head>
+  <body>
+
+    <div id="obniz-debug"></div>
+    <button id="on">ON</button>
+    <button id="off">OFF</button>
+    <div id="print"></div>
+
+    <h1>Hello Grove Button</h1>
+    <div id="print"></div>
+    
+
+
+
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyDpH0ZhYoBESyrz8BE2kTvi-X4XlBKjmeg",
+          authDomain: "chair-3f4e9.firebaseapp.com",
+          databaseURL: "https://chair-3f4e9.firebaseio.com",
+          projectId: "chair-3f4e9",
+          storageBucket: "chair-3f4e9.appspot.com",
+          messagingSenderId: "336370575775",
+          appId: "1:336370575775:web:4a2291e545c3dccf24f5aa"
+        };
+      
+        firebase.initializeApp(config);
+    </script>
+        
+    <script>
+    //読み込み処理
+        var obniz = new Obniz("6606-0786");
+        var iLight =0.2;
+        var FlgLight =0;
+        var Flgvibra =0;
+        var istand = 10;
+        var iFlgStatus = 1;
+        var iStrong=1;
+
+      obniz.onconnect = async function () {
+          var led = obniz.wired("WS2812B", {gnd:9, vcc: 10, din: 11});
+          var color = [];
+          
+          for(var i = 0; i < 85; i++){
+                iLight-=0.0003;
+              color[i] = [istand,  iStrong, iLight];
+          }
+          led.hsvs(color);
+
+        var setLed = function(){
+            for(var i = 0; i < 85; i++){
+                color[i] = [istand,  iStrong, iLight];
+            }
+            if(FlgLight===0){
+              iLight-=0.003;
+            }else{
+              iLight+=0.003;             
+            }
+
+            if (iLight<0.002){
+              FlgLight=1;
+            }
+            if (iLight>=0.2){
+              FlgLight=0;
+            }
+            // $('#print').text(iLight);
+            led.hsvs(color);           
+               $('#print').text(iFlgStatus);
+        };
+        
+        
+        LEDtimer =setInterval(setLed, 20);
+       
+       
+        
+        
+        
+
+        
+        
+        var setvibration = function(){
+          if(istand==10){
+            obniz.io7.output(false);
+            // IO6をVINとして使う
+            obniz.io6.drive('5v');
+            obniz.io6.output(true);
+
+            if (Flgvibra===0){
+              obniz.io4.pull('5v');
+              Flgvibra=1;
+            }else{
+              obniz.io4.pull(null);
+              Flgvibra=0;
+
+            }
+            
+          }else{
+              obniz.io4.pull(null);
+            
+          }
+        };
+        
+        vibration =setInterval(setvibration, 1000);
+
+          var setfirebase = function(){
+              firebase.database().ref('/6606-0786/').on('value',function(snapshot) {
+                istand = snapshot.child("iValue").val();  
+                iFlgStatus = snapshot.child("iFlg").val();  
+                iStrong = snapshot.child("iStrong").val();  
+               });
+            
+          };
+          shotfirebase =setInterval(setfirebase, 1000);
+
+          
+
+        }
+        
+
+
+
+    </script>
+
+    
+    
+    <script>
+    </script>
+  </body>
