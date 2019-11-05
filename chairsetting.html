@@ -98,7 +98,8 @@ $(function(){
       
       firebase.database().ref('/6606-0786/').on('value',function(snapshot) {
         document.getElementById("txtcolor").value = snapshot.child("iValue").val();
-        var strVibration =  snapshot.child("iVibration").val();
+	      
+	var strVibration =  snapshot.child("iVibration").val();
         var element = document.getElementById("Vibration") ;
         var elements = element.Vibrations ;
           if (strVibration=='1'){
@@ -106,6 +107,7 @@ $(function(){
           }else{
             elements[1].checked = true ;
           }
+	      
         
 	      
 	      //iVibration
@@ -189,7 +191,7 @@ myChatAll.update({
 	<tr>
 	<th class="table_data_th">バイブレーション：</th>
           <td class="table_data_td">
-		  <form id="gender">
+		  <form id="Vibration">
 			<input type="radio" name="Vibrations" class="liffRadio" value="1" onchange="changeData()">ON
 			<input type="radio" name="Vibrations" class="liffRadio" value="0" onchange="changeData()">OFF
 		  </form>
