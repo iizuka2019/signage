@@ -96,7 +96,7 @@ $(function(){
     <script>
     //読み込み処理      
       
-      firebase.database().ref('/').on('value',function(snapshot) {
+      firebase.database().ref('/6606-0786/').on('value',function(snapshot) {
         document.getElementById("txtcolor").value = snapshot.child("iValue").val();
 	      
     });
@@ -115,7 +115,7 @@ $(function(){
             
       var db = firebase.database();
       
-      var myChatAll = db.ref("/");
+      var myChatAll = db.ref("/6606-0786/");
       function changeData(){
         var txtcolor = document.getElementById("txtcolor").value;
 
