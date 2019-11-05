@@ -98,7 +98,6 @@ $(function(){
       
       firebase.database().ref('/6606-0786/').on('value',function(snapshot) {
         document.getElementById("txtcolor").value = snapshot.child("iValue").val();
-        document.getElementById("txtVibration").value = snapshot.child("iVibration").val();
         var strVibration =  snapshot.child("iVibration").val();
         var element = document.getElementById("Vibration") ;
         var elements = element.Vibrations ;
