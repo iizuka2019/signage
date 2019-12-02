@@ -81,6 +81,7 @@ $(function(){
       firebase.database().ref('/6606-0786/').on('value',function(snapshot) {
         document.getElementById("output1").value = snapshot.child("iValue").val();
         document.getElementById("rangeout").value = snapshot.child("iValue").val();
+        document.getElementById("txtWeight").value = snapshot.child("iWeight").val() & "g" ;
 	      
 	var strVibration =  snapshot.child("iVibration").val();
         var element = document.getElementById("Vibration") ;
@@ -178,7 +179,7 @@ myChatAll.update({
 <p class="wf-roundedmplus1c">
 	<nav class="gnav">
 		 <ul class="gnav__menu">
-			<li class="gnav__menu__centeritem">管理画面</li>
+			<li class="gnav__menu__centeritem">デバイスNo.6606-0786</li>
 
 		
 		</ul>
@@ -204,13 +205,13 @@ myChatAll.update({
 <li class="gnav__menu__centeritem">
 <table class="device-info-table2">
 	<tr>
-	      <th class="table_data_th">No</th>
+	      <th class="table_data_th">重さ</th>
 	      <td class="table_data_td">色</td>
 	      <td class="table_data_td">バイブレーション</td>
 	      <td class="table_data_td">ヒーター</td>
 	</tr>
 	<tr>
-	    <th class="table_data_th">6606-0786</th>
+	    <th class="table_data_th"><output id="txtWight">g</output></th>
 	    <td class="table_data_td">
 		    <input type="range" value="1" min="0" max="359" step="1" id="rangeout" oninput="document.getElementById('output1').value=this.value" onchange="changeData()">
 		    <output id="output1">1</output>
