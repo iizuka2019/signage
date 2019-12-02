@@ -1,0 +1,305 @@
+<html>
+
+  <head>
+  <meta name="robots" content="noindex,follow" />	  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="cushion.css" />
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    -->
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery.circliful.css">
+    <link rel="stylesheet" href="css/font-icon.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>さいねーじ</title>
+
+    <style type="text/css">
+      .gnav__menu{
+	display: flex;
+	font-family: "M PLUS Rounded 1c"
+      }
+      .gnav__menu__leftitem{
+        width: 5%;
+        list-style: none;
+      }
+      .gnav__menu__centeritem{
+        width: 80%;
+        list-style: none;
+      }
+      .gnav__menu__rightitem{
+        width: 10%;
+        list-style: none;
+      }
+
+.table_data_th{
+  width: 40%;
+  text-align: right;
+
+}
+
+.table_data_td{
+  width: 60%;
+}
+	    
+      p.wf-roundedmplus1c {font-family: "M PLUS Rounded 1c";}
+      p.wf-roundedmplus1c_title {
+        font-family: "M PLUS Rounded 1c"
+        line-height : normal ;
+        border-bottom : 1px solid gray ;
+      }
+	</style>
+    
+   </head>
+
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/jquery.circliful.js"></script>
+    
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
+    <script>
+$(function(){
+	var aTags = $('a'); //ページ内のaタグ群を取得。aTagsに配列として代入。
+	aTags.each(function(){ //全てのaタグについて処理
+		var url = $(this).attr('href');//aタグのhref属性からリンク先url取得
+		$(this).removeAttr('href');//念のため、href属性は削除
+		$(this).click(function(){//クリックイベントをバインド
+			location.href = url;
+		});
+	});
+});	    
+      
+        // Initialize Firebase
+	const config = {
+          apiKey: "AIzaSyDpH0ZhYoBESyrz8BE2kTvi-X4XlBKjmeg",
+          authDomain: "chair-3f4e9.firebaseapp.com",
+          databaseURL: "https://chair-3f4e9.firebaseio.com",
+          projectId: "chair-3f4e9",
+          storageBucket: "chair-3f4e9.appspot.com",
+          messagingSenderId: "336370575775",
+          appId: "1:336370575775:web:4a2291e545c3dccf24f5aa"
+	};
+	firebase.initializeApp(config);
+    </script>
+    
+    <script>
+    //読み込み処理      
+      
+      firebase.database().ref('/0113-6694/').on('value',function(snapshot) {
+        document.getElementById("txtcolor").value = snapshot.child("iValue").val();
+	      
+	var strVibration =  snapshot.child("iVibration").val();
+        var element = document.getElementById("Vibration") ;
+        var elements = element.Vibrations ;
+          if (strVibration=='1'){
+            elements[0].checked = true ;
+          }else{
+            elements[1].checked = true ;
+          }
+	      
+	var strHeater =  snapshot.child("iHeater").val();
+        var elementHeater = document.getElementById("Heater") ;
+        var elementHeaters = elementHeater.Heaters ;
+          if (strHeater=='1'){
+            elementHeaters[0].checked = true ;
+          }else{
+            elementHeaters[1].checked = true ;
+          }
+	      
+        
+	      
+	      //iVibration
+    });
+    
+
+      
+
+
+    </script>
+    
+<section class="container">
+
+
+    <script>
+    //書き込み処理
+            
+      var db = firebase.database();
+      
+      var myChatAll = db.ref("/0113-6694/");
+      function changeData(strColor){
+        var txtcolor = document.getElementById("txtcolor").value;
+        //var txtcolorname = document.getElementById("txtcolorname").value;
+	if(strColor=="いかり"){
+		txtcolor=1
+	}else if(strColor=="きたい"){
+		txtcolor=30
+	}else if(strColor=="よろこび"){
+		txtcolor=60
+	}else if(strColor=="しんらい"){
+		txtcolor=90
+	}else if(strColor=="ふあん"){
+		txtcolor=120
+	}else if(strColor=="むしん"){
+		txtcolor=160
+	}else if(strColor=="かなしみ"){
+		txtcolor=200
+	}else if(strColor=="けんお"){
+		txtcolor=260
+	}
+
+	var element = document.getElementById("Vibration") ;
+	var elements = element.Vibrations ;
+	var strVibration =  "";
+        if (elements[0].checked == true){
+          strVibration = '1' ;
+        }else{
+          strVibration = '0' ;
+        }
+
+	var elementHeater = document.getElementById("Heater") ;
+	var elementHeaters = elementHeater.Heaters ;
+	var strHeater =  "";
+        if (elementHeaters[0].checked == true){
+          strHeater = '1' ;
+        }else{
+          strHeater = '0' ;
+        }
+	      
+	      
+myChatAll.update({
+    'iValue': txtcolor,
+    'iVibration': strVibration,
+    'iHeater': strHeater
+	
+});
+	      
+      }
+      
+    </script>
+    
+    <!-- Title -->
+  
+
+<p class="wf-roundedmplus1c">
+	<nav class="gnav">
+		 <ul class="gnav__menu">
+			<li class="gnav__menu__centeritem">0113-6694</li>
+		</ul>
+	</nav>
+</p>
+	  
+<hr>  
+
+	  
+	  
+<p class="wf-roundedmplus1c">
+	  
+  <table class="device-info-table">
+    <tr>
+      <td colspan="2" align="center"><span id="status"  ></span></td>
+    </tr>
+  </table>
+    <hr />
+</p>
+
+  
+
+
+
+<p class="wf-roundedmplus1c">  
+  <table class="device-info-table">
+    <tr>
+      <th class="table_data_th">色：</th>
+      <td class="table_data_td">
+      <input type="tel" class="liffinput" name="color" maxlength="3" id="txtcolor" onchange="changeData()">
+    </td>
+    </tr>
+    <tr>
+      <th class="table_data_th"></th>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="いかり" id="txtcolorname" onclick="changeData('いかり')">
+    </td>
+    </tr>
+    <tr>
+      <th class="table_data_th"></th>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="きたい" id="txtcolorname" onclick="changeData('きたい')">
+    </td>
+    </tr>
+    <tr>
+      <th class="table_data_th"></th>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="よろこび"  id="txtcolorname" onclick="changeData('よろこび')">
+    </td>
+    </tr>
+    <tr>
+      <th class="table_data_th"></th>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="しんらい"  id="txtcolorname" onclick="changeData('しんらい')">
+    </td>
+    </tr>
+    <tr>
+      <th class="table_data_th"></th>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="ふあん" id="txtcolorname" onclick="changeData('ふあん')">
+    </td>
+    </tr>
+    <tr>
+      <th class="table_data_th"></th>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="むしん"  id="txtcolorname" onclick="changeData('むしん')">
+    </td>
+    </tr>
+    <tr>
+      <th class="table_data_th"></th>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="かなしみ" id="txtcolorname" onclick="changeData('かなしみ')">
+    </td>
+    </tr>
+    <tr>
+      <th class="table_data_th"></th>
+    <td class="table_data_td">
+      <input type="button" class="liffinput" name="colorname" value="けんお"  id="txtcolorname" onclick="changeData('けんお')">
+    </td>
+    </tr>
+	<tr>
+	<th class="table_data_th">バイブレーション：</th>
+	  <td class="table_data_td">
+		  <form id="Vibration">
+			<input type="radio" name="Vibrations" class="liffRadio" value="1" onchange="changeData()">ON
+			<input type="radio" name="Vibrations" class="liffRadio" value="0" onchange="changeData()">OFF
+		  </form>
+	  </td>
+	</tr>
+	  
+	<tr>
+	<th class="table_data_th">ヒーター：</th>
+	  <td class="table_data_td">
+		  <form id="Heater">
+			<input type="radio" name="Heaters" class="liffRadio" value="1" onchange="changeData()">ON
+			<input type="radio" name="Heaters" class="liffRadio" value="0" onchange="changeData()">OFF
+		  </form>
+	  </td>
+	</tr>
+
+  </table>
+    
+</p>
+
+    </section>
+    
+    
+  </body>
+
+</html>
