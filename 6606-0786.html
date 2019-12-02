@@ -97,7 +97,7 @@ $(function(){
     //読み込み処理      
       
       firebase.database().ref('/6606-0786/').on('value',function(snapshot) {
-        document.getElementById("txtcolor").value = snapshot.child("iValue").val();
+        document.getElementById("output1").value = snapshot.child("iValue").val();
 	      
 	var strVibration =  snapshot.child("iVibration").val();
         var element = document.getElementById("Vibration") ;
@@ -140,26 +140,7 @@ $(function(){
       function changeData(strColor){
         //var txtcolor = document.getElementById("txtcolor").value;
         var txtcolor = document.getElementById("output1").value;
-        //var txtcolorname = document.getElementById("txtcolorname").value;
-	      /*
-	if(strColor=="いかり"){
-		txtcolor=1
-	}else if(strColor=="きたい"){
-		txtcolor=30
-	}else if(strColor=="よろこび"){
-		txtcolor=60
-	}else if(strColor=="しんらい"){
-		txtcolor=90
-	}else if(strColor=="ふあん"){
-		txtcolor=120
-	}else if(strColor=="むしん"){
-		txtcolor=160
-	}else if(strColor=="かなしみ"){
-		txtcolor=200
-	}else if(strColor=="けんお"){
-		txtcolor=260
-	}
-	*/
+ 
 
 	var element = document.getElementById("Vibration") ;
 	var elements = element.Vibrations ;
@@ -237,55 +218,6 @@ myChatAll.update({
     </td>
     </tr>
 
-    <tr>
-      <th class="table_data_th"></th>
-    <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="いかり" id="txtcolorname" onclick="changeData('いかり')">
-    </td>
-    </tr>
-	  
-    <tr>
-      <th class="table_data_th"></th>
-    <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="きたい" id="txtcolorname" onclick="changeData('きたい')">
-    </td>
-    </tr>
-    <tr>
-      <th class="table_data_th"></th>
-    <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="よろこび"  id="txtcolorname" onclick="changeData('よろこび')">
-    </td>
-    </tr>
-    <tr>
-      <th class="table_data_th"></th>
-    <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="しんらい"  id="txtcolorname" onclick="changeData('しんらい')">
-    </td>
-    </tr>
-    <tr>
-      <th class="table_data_th"></th>
-    <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="ふあん" id="txtcolorname" onclick="changeData('ふあん')">
-    </td>
-    </tr>
-    <tr>
-      <th class="table_data_th"></th>
-    <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="むしん"  id="txtcolorname" onclick="changeData('むしん')">
-    </td>
-    </tr>
-    <tr>
-      <th class="table_data_th"></th>
-    <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="かなしみ" id="txtcolorname" onclick="changeData('かなしみ')">
-    </td>
-    </tr>
-    <tr>
-      <th class="table_data_th"></th>
-    <td class="table_data_td">
-      <input type="button" class="liffinput" name="colorname" value="けんお"  id="txtcolorname" onclick="changeData('けんお')">
-    </td>
-    </tr>
 	<tr>
 	<th class="table_data_th">バイブレーション：</th>
 	  <td class="table_data_td">
