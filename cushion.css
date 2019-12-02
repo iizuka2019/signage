@@ -124,6 +124,22 @@ td{
   width: 50%;
 }
 
+.device-info-table2 {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+th{
+  width: 20%;
+  text-align: right;
+
+}
+
+td{
+  width: 20%;
+}
+
 
 .device-info-cell {
     text-align: left;
