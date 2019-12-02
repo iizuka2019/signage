@@ -142,8 +142,10 @@ $(function(){
 	var element = document.getElementById("Vibration") ;
 	var elements = element.Vibrations ;
 	var strVibration =  "";
+	var strFlg =  0;
 	      
         var txtcolor = document.getElementById("output1").value;
+	strFlg=0;
 	      if(!strColor){
 	      }else{
 		     txtcolor=strColor;
@@ -153,6 +155,8 @@ $(function(){
 			     
 		     }else if(strColor==70){
 			     elements[0].checked=true;
+			     strFlg=1;
+			     //モゾモゾ動作なしで30分経過 ②バイブ作動 2秒
 		     }
 	      }
 		      
@@ -176,7 +180,8 @@ $(function(){
 myChatAll.update({
     'iValue': txtcolor,
     'iVibration': strVibration,
-    'iHeater': strHeater
+    'iHeater': strHeater,
+    'iFlg': strFlg
 	
 });
 	      
