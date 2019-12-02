@@ -140,9 +140,11 @@ $(function(){
       function changeData(strColor){
         //var txtcolor = document.getElementById("txtcolor").value;
         var txtcolor = document.getElementById("output1").value;
-	      if(strColor<>''){
-		     txtcolor=strColor;
+	      if(!strColor){
+	      }else{
+		     txtcolor=strColor;      
 	      }
+		      
 
 	var element = document.getElementById("Vibration") ;
 	var elements = element.Vibrations ;
