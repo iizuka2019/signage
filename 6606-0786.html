@@ -140,7 +140,9 @@ $(function(){
       function changeData(strColor){
         //var txtcolor = document.getElementById("txtcolor").value;
         var txtcolor = document.getElementById("output1").value;
- 
+	      if(strColor<>''){
+		     txtcolor=strColor;
+	      }
 
 	var element = document.getElementById("Vibration") ;
 	var elements = element.Vibrations ;
@@ -234,7 +236,7 @@ myChatAll.update({
 	      <th class="table_data_th">仕様1</th>
 	      <td class="table_data_td">人が座ったら</td>
 	      <td class="table_data_td">水色点滅</td>
-	      <td class="table_data_td"><input type="button" class="liffinput" name="colorname" value="ON"  oninput="document.getElementById('output1').value=160" onchange="changeData()"</td>
+	      <td class="table_data_td"><input type="button" class="liffinput" name="colorname" value="ON" onchange="changeData(160)"</td>
 		
 	</tr>
 	<tr>
