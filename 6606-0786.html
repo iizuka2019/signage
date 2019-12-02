@@ -98,6 +98,7 @@ $(function(){
       
       firebase.database().ref('/6606-0786/').on('value',function(snapshot) {
         document.getElementById("output1").value = snapshot.child("iValue").val();
+        document.getElementById("rangeout").value = snapshot.child("iValue").val();
 	      
 	var strVibration =  snapshot.child("iVibration").val();
         var element = document.getElementById("Vibration") ;
@@ -204,39 +205,30 @@ myChatAll.update({
 <p class="wf-roundedmplus1c">  
   <table class="device-info-table">
     <tr>
-      <th class="table_data_th">色：</th>
-      <td class="table_data_td">
-      <input type="tel" class="liffinput" name="color" maxlength="3" id="txtcolor" onchange="changeData()">
-    </td>
+      <th class="table_data_th">No</th>
+      <td class="table_data_td">色</td>
+      <td class="table_data_td">バイブレーション</td>
+      <td class="table_data_td">ヒーター</td>
     </tr>
 
     <tr>
-      <th class="table_data_th">いろー</th>
+      <th class="table_data_th">6606-0786</th>
     <td class="table_data_td">
-      <input type="range" value="1" min="1" max="359" step="1" oninput="document.getElementById('output1').value=this.value" onchange="changeData()">
+      <input type="range" value="1" min="1" max="359" step="1" id="rangeout" oninput="document.getElementById('output1').value=this.value" onchange="changeData()">
 <output id="output1">1</output>
     </td>
-    </tr>
-
-	<tr>
-	<th class="table_data_th">バイブレーション：</th>
-	  <td class="table_data_td">
-		  <form id="Vibration">
+      <td class="table_data_td"><form id="Vibration">
 			<input type="radio" name="Vibrations" class="liffRadio" value="1" onchange="changeData()">ON
 			<input type="radio" name="Vibrations" class="liffRadio" value="0" onchange="changeData()">OFF
-		  </form>
-	  </td>
-	</tr>
-	  
-	<tr>
-	<th class="table_data_th">ヒーター：</th>
-	  <td class="table_data_td">
+		  </form></td>
+      <td class="table_data_td">
 		  <form id="Heater">
 			<input type="radio" name="Heaters" class="liffRadio" value="1" onchange="changeData()">ON
 			<input type="radio" name="Heaters" class="liffRadio" value="0" onchange="changeData()">OFF
-		  </form>
-	  </td>
-	</tr>
+		  </form></td>
+    </tr>
+
+	
 
   </table>
     
