@@ -81,7 +81,7 @@ $(function(){
       firebase.database().ref('/6606-0786/').on('value',function(snapshot) {
         document.getElementById("output1").value = snapshot.child("iValue").val();
         document.getElementById("rangeout").value = snapshot.child("iValue").val();
-        document.getElementById("txtWeight").value = snapshot.child("iWeight").val();
+        document.getElementById("txtWeight").value = Math.round(snapshot.child("iWeight").val()) & "g";
 	      
 	var strVibration =  snapshot.child("iVibration").val();
         var element = document.getElementById("Vibration") ;
