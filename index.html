@@ -26,7 +26,7 @@
 		$(function(){
 			$("#color-dialog").on("change", function(){
 			$('#lblbgColor').css("color", $('#color-dialog').val())
-			$('#areacolor').text($('#color-dialog').val());
+			$('#areabgcolor').text($('#color-dialog').val());
 		});
 	});
 	</script>	  
@@ -109,6 +109,7 @@ $(function(){
       
       firebase.database().ref('/').on('value',function(snapshot) {
         document.getElementById("txtbgcolor").value = snapshot.child("bgcolor").val();
+        document.getElementById("areabgcolor").value = snapshot.child("bgcolor").val();
         document.getElementById("txtfontcolor").value = snapshot.child("fontcolor").val();
         document.getElementById("txtfontsize").value = snapshot.child("fontsize").val();
         document.getElementById("txtfont").value = snapshot.child("font").val();
@@ -231,10 +232,10 @@ myChatAll.update({
 		<td class="table_data_td">
 		  <input type="tel" class="liffinput" name="bgcolor" maxlength="6" id="txtbgcolor" onchange="changeData()">
 			
-		<div style="float: left;width: 150px;">
-		<label id="lblbgcolor">list属性なし</label></br></br>
-		<input id="color-dialog" type="color" value="#ffffff"></br></br>
-		選択値 ： <span id="areacolor"></span>
+		<div>
+		<label id="lblbgcolor">list属性なし</label>
+		<input id="color-dialog" type="color" value="#ffffff">
+		選択値 ： <span id="areabgcolor"></span>
 		</div>
 
 		</td>
