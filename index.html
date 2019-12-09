@@ -174,23 +174,6 @@ myChatAll.update({
     'footermessage': txtFootermessage
 });
 	      
-
-        //if (elements[0].checked == true){
-        //  strGender = 'male' ;
-        //}else{
-        //  strGender = 'female' ;
-        //}
-        //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight,weight:"0.1",Sittingtime:"16" ,Standtime:"41"});
-        //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight});
-	//var postData = {
-	//    bgcolor: txtbgcolor
-	//};	      
-	//var updates = {};
-	//updates['/'] = postData;
-	//firebase.database().ref().update(updates);	      
-	//myChatAll.update(updates)
-	//myChatAll.updates[bgcolor] = txtbgcolor;
-        //myChatAll.set({bgcolor:txtbgcolor});
 	      
       }
       
@@ -232,13 +215,20 @@ myChatAll.update({
 		<td class="table_data_td">
 		  <input type="tel" class="liffinput" name="bgcolor" maxlength="6" id="txtbgcolor" onchange="changeData()">
 			
-		<div>
 		<input id="color-dialog" type="color" value="#ffffff">
-		選択値 ： <span id="areabgcolor"></span>
-		</div>
+		
 
 		</td>
         </tr>
+	      
+        <tr>
+          <th class="table_data_th">背景色：</th>
+		<td class="table_data_td">
+			<input id="color-dialog" type="color" value="#ffffff">選択値 ： <span id="areabgcolor"></span>			
+		</td>
+        </tr>
+
+	      
         <tr>
           <th class="table_data_th">文字色：</th>
 		<td class="table_data_td">
