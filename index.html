@@ -24,8 +24,6 @@
 	<script type="text/javascript">
 		$(function(){
 			$("#color-dialog").on("change", function(){
-			$('#lblbgcolor').css("color", $('#color-dialog').val())
-			$('#areabgcolor').text($('#color-dialog').val());
 			document.getElementById("txtbgcolor").value = $('#color-dialog').val();
 		});
 	});
@@ -109,7 +107,6 @@ $(function(){
       
       firebase.database().ref('/').on('value',function(snapshot) {
         document.getElementById("txtbgcolor").value = snapshot.child("bgcolor").val();
-        document.getElementById("areabgcolor").value = snapshot.child("bgcolor").val();
 	document.getElementById('color-dialog').value = snapshot.child("bgcolor").val();
 	      
         document.getElementById("txtfontcolor").value = snapshot.child("fontcolor").val();
@@ -215,17 +212,9 @@ myChatAll.update({
         <tr>
           <th class="table_data_th">背景色：</th>
 		<td class="table_data_td">
-		  <input type="tel" class="liffinput" name="bgcolor" maxlength="7" id="txtbgcolor" onchange="changeData()">
+		  <input id="color-dialog" type="color" value="#ffffff"><input type="tel" class="liffinput" name="bgcolor" maxlength="7" id="txtbgcolor" onchange="changeData()">
 		</td>
         </tr>
-	      
-        <tr>
-          <th class="table_data_th">背景色：</th>
-		<td class="table_data_td">
-			<input id="color-dialog" type="color" value="#ffffff">選択値 ： <input type="text" id="areabgcolor"></span>			
-		</td>
-        </tr>
-
 	      
         <tr>
           <th class="table_data_th">文字色：</th>
