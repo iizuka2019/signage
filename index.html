@@ -27,6 +27,11 @@
 			document.getElementById("txtbgcolor").value = $('#color-dialog').val();
 			changeData();
 		});
+		$(function(){
+			$("#color-dialogfont").on("change", function(){
+			document.getElementById("txtfontcolor").value = $('#color-dialogfont').val();
+			changeData();
+		});
 	});
 	</script>	  
 	  
@@ -111,6 +116,7 @@ $(function(){
 	document.getElementById('color-dialog').value = snapshot.child("bgcolor").val();
 	      
         document.getElementById("txtfontcolor").value = snapshot.child("fontcolor").val();
+	document.getElementById('color-dialogfont').value = snapshot.child("fontcolor").val();
         document.getElementById("txtfontsize").value = snapshot.child("fontsize").val();
         document.getElementById("txtfont").value = snapshot.child("font").val();
         document.getElementById("txtHead").value = snapshot.child("heddermessage").val();
@@ -220,7 +226,7 @@ myChatAll.update({
         <tr>
           <th class="table_data_th">文字色：</th>
 		<td class="table_data_td">
-			<input type="tel" class="liffinput" name="fontcolor" maxlength="6" id="txtfontcolor" onchange="changeData()">
+			<input id="color-dialogfont" type="color" value="#ffffff" onchange="changeData()"><input type="tel" class="liffinput" name="fontcolor" maxlength="7" id="txtfontcolor" onchange="changeData()">
 		</td>
         </tr>
         <tr>
