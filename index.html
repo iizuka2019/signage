@@ -20,8 +20,23 @@
     <![endif]-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	  
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#color-dialog").on("change", function(){
+			$('#label1').css("color", $('#color-dialog').val())
+			$('#area1').text($('#color-dialog').val());
+		});
+			$("#color-list").on("change", function(){
+			$('#label2').css("color", $('#color-list').val())
+			$('#area2').text($('#color-list').val());
+		});
+	});
+	</script>	  
+	  
     <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>さいねーじ</title>
+  <title>エクステリア</title>
 
     <style type="text/css">
       .gnav__menu{
@@ -219,6 +234,13 @@ myChatAll.update({
           <th class="table_data_th">背景色：</th>
 		<td class="table_data_td">
 		  <input type="tel" class="liffinput" name="bgcolor" maxlength="6" id="txtbgcolor" onchange="changeData()">
+			
+		<div style="float: left;width: 150px;">
+		<label id="label1">list属性なし</label></br></br>
+		<input id="color-dialog" type="color" value="#ffffff"></br></br>
+		選択値 ： <span id="area1"></span>
+		</div>
+
 		</td>
         </tr>
         <tr>
