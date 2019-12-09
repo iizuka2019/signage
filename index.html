@@ -109,7 +109,7 @@ $(function(){
       firebase.database().ref('/').on('value',function(snapshot) {
         document.getElementById("txtbgcolor").value = snapshot.child("bgcolor").val();
         document.getElementById("areabgcolor").value = snapshot.child("bgcolor").val();
-	document.getElementById('color-dialog').value = snapshot.child("bgcolor").val();
+	//document.getElementById('color-dialog').value = snapshot.child("bgcolor").val();
 	      
         document.getElementById("txtfontcolor").value = snapshot.child("fontcolor").val();
         document.getElementById("txtfontsize").value = snapshot.child("fontsize").val();
