@@ -27,6 +27,7 @@
 			$("#color-dialog").on("change", function(){
 			$('#lblbgcolor').css("color", $('#color-dialog').val())
 			$('#areabgcolor').text($('#color-dialog').val());
+				document.getElementById("areabgcolor").value=$('#color-dialog').val()
 		});
 	});
 	</script>	  
