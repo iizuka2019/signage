@@ -204,32 +204,57 @@ $(function(){
         var txtScroll = document.getElementById("txtScroll").value;
         var txtCssymargin = document.getElementById("txtCssymargin").value;
 
-myChatAll.update({
-    'bgcolor': txtbgcolor,
-    'fontcolor': txtfontcolor,
-    'fontsize': txtfontsize,
-    'font': txtfont,
-    'heddermessage': txtHead,
-    'reloadtime': txtReload,
-    'timedateflg': txtTimedateflg,
-    'temperatureflg': txtTemperatureflg,
-    'humidityflg': txtHumidityflg,
-    'temperaturecor': txtTemperaturecor,
-    'discomfortindexflg': txtDiscomfortindexflg,
-    'scrollamount': txtScroll,
-    'cssymargin': txtCssymargin,
-    'footermessage': txtFootermessage
-});
+	myChatAll.update({
+	    'bgcolor': txtbgcolor,
+	    'fontcolor': txtfontcolor,
+	    'fontsize': txtfontsize,
+	    'font': txtfont,
+	    'heddermessage': txtHead,
+	    'reloadtime': txtReload,
+	    'timedateflg': txtTimedateflg,
+	    'temperatureflg': txtTemperatureflg,
+	    'humidityflg': txtHumidityflg,
+	    'temperaturecor': txtTemperaturecor,
+	    'discomfortindexflg': txtDiscomfortindexflg,
+	    'scrollamount': txtScroll,
+	    'cssymargin': txtCssymargin,
+	    'footermessage': txtFootermessage
+	});
 	      
-    //'discom55': txtDiscom55,
-    //'discom60': txtDiscom60,
-    //'discom65': txtDiscom65,
-    //'discom70': txtDiscom70,
-    //'discom75': txtDiscom75,
-    //'discom80': txtDiscom80,
-    //'discom85': txtDiscom85,
-    //'discom86': txtDiscom86,
-
+	var dbfukai55 = db.ref("/fukai55/");
+	var dbfukai60 = db.ref("/fukai60/");
+	var dbfukai65 = db.ref("/fukai65/");
+	var dbfukai70 = db.ref("/fukai70/");
+	var dbfukai75 = db.ref("/fukai75/");
+	var dbfukai80 = db.ref("/fukai80/");
+	var dbfukai85 = db.ref("/fukai85/");
+	var dbfukai86 = db.ref("/fukai86/");
+	      
+	dbfukai55.update({
+	    'discom55': txtDiscom55
+	});
+	dbfukai60.update({
+	    'discom60': txtDiscom60
+	});
+	dbfukai65.update({
+	    'discom65': txtDiscom65
+	});
+	dbfukai70.update({
+	    'discom70': txtDiscom70
+	});
+	dbfukai75.update({
+	    'discom75': txtDiscom75
+	});
+	dbfukai80.update({
+	    'discom80': txtDiscom80
+	});
+	dbfukai85.update({
+	    'discom85': txtDiscom85
+	});
+	dbfukai86.update({
+	    'discom86': txtDiscom86
+	});
+	      
 	      
       }
       
