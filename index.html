@@ -130,11 +130,41 @@ $(function(){
         document.getElementById("txtDiscomfortindexflg").value = snapshot.child("discomfortindexflg").val();
         document.getElementById("txtCssymargin").value = snapshot.child("cssymargin").val();
         document.getElementById("txtFootermessage").value = snapshot.child("footermessage").val();
+
 	      
     });
     
-
-      
+      firebase.database().ref('/fukai55/').on('value',function(snapshot) {
+	document.getElementById("txtDiscom55").value = snapshot.child("message").val();	      
+      });
+					      
+      firebase.database().ref('/fukai60/').on('value',function(snapshot) {
+	document.getElementById("txtDiscom60").value = snapshot.child("message").val();	      
+      });
+					      
+      firebase.database().ref('/fukai65/').on('value',function(snapshot) {
+	document.getElementById("txtDiscom65").value = snapshot.child("message").val();	      
+      });
+	    
+      firebase.database().ref('/fukai70/').on('value',function(snapshot) {
+	document.getElementById("txtDiscom70").value = snapshot.child("message").val();	      
+      });
+	    
+      firebase.database().ref('/fukai75/').on('value',function(snapshot) {
+	document.getElementById("txtDiscom75").value = snapshot.child("message").val();	      
+      });
+	    
+      firebase.database().ref('/fukai80/').on('value',function(snapshot) {
+	document.getElementById("txtDiscom80").value = snapshot.child("message").val();	      
+      });
+	    
+      firebase.database().ref('/fukai85/').on('value',function(snapshot) {
+	document.getElementById("txtDiscom85").value = snapshot.child("message").val();	      
+      });
+	    
+      firebase.database().ref('/fukai86/').on('value',function(snapshot) {
+	document.getElementById("txtDiscom86").value = snapshot.child("message").val();	      
+      });
 
 
     </script>
@@ -160,6 +190,16 @@ $(function(){
         var txtHumidityflg = document.getElementById("txtHumidityflg").value;
         var txtTemperaturecor = document.getElementById("txtTemperaturecor").value;
         var txtDiscomfortindexflg = document.getElementById("txtDiscomfortindexflg").value;
+	      
+        var txtDiscom55 = document.getElementById("txtDiscom55").value;
+        var txtDiscom60 = document.getElementById("txtDiscom60").value;
+        var txtDiscom65 = document.getElementById("txtDiscom65").value;
+        var txtDiscom70 = document.getElementById("txtDiscom70").value;
+        var txtDiscom75 = document.getElementById("txtDiscom75").value;
+        var txtDiscom80 = document.getElementById("txtDiscom80").value;
+        var txtDiscom85 = document.getElementById("txtDiscom85").value;
+        var txtDiscom86 = document.getElementById("txtDiscom86").value;
+	      
         var txtFootermessage = document.getElementById("txtFootermessage").value;
         var txtScroll = document.getElementById("txtScroll").value;
         var txtCssymargin = document.getElementById("txtCssymargin").value;
@@ -181,6 +221,15 @@ myChatAll.update({
     'footermessage': txtFootermessage
 });
 	      
+    //'discom55': txtDiscom55,
+    //'discom60': txtDiscom60,
+    //'discom65': txtDiscom65,
+    //'discom70': txtDiscom70,
+    //'discom75': txtDiscom75,
+    //'discom80': txtDiscom80,
+    //'discom85': txtDiscom85,
+    //'discom86': txtDiscom86,
+
 	      
       }
       
@@ -294,6 +343,56 @@ myChatAll.update({
 		  <input type="tel" class="liffinput" name="discomfortindexflg" maxlength="20" id="txtDiscomfortindexflg" onchange="changeData()">
 		</td>		
         </tr>
+	      
+        <tr>
+          <th class="table_data_th">不快指数~55：</th>
+		<td class="table_data_td">
+		  <input type="text" class="liffinput" name="discom55" maxlength="30" id="txtDiscom55" onchange="changeData()">
+		</td>		
+        </tr>
+        <tr>
+          <th class="table_data_th">不快指数60：</th>
+		<td class="table_data_td">
+		  <input type="text" class="liffinput" name="discom60" maxlength="30" id="txtDiscom60" onchange="changeData()">
+		</td>		
+        </tr>
+        <tr>
+          <th class="table_data_th">不快指数65：</th>
+		<td class="table_data_td">
+		  <input type="text" class="liffinput" name="discom65" maxlength="30" id="txtDiscom65" onchange="changeData()">
+		</td>		
+        </tr>
+        <tr>
+          <th class="table_data_th">不快指数70：</th>
+		<td class="table_data_td">
+		  <input type="text" class="liffinput" name="discom70" maxlength="30" id="txtDiscom70" onchange="changeData()">
+		</td>		
+        </tr>
+        <tr>
+          <th class="table_data_th">不快指数75：</th>
+		<td class="table_data_td">
+		  <input type="text" class="liffinput" name="discom75" maxlength="30" id="txtDiscom75" onchange="changeData()">
+		</td>		
+        </tr>
+        <tr>
+          <th class="table_data_th">不快指数80：</th>
+		<td class="table_data_td">
+		  <input type="text" class="liffinput" name="discom80" maxlength="30" id="txtDiscom80" onchange="changeData()">
+		</td>		
+        </tr>
+        <tr>
+          <th class="table_data_th">不快指数85：</th>
+		<td class="table_data_td">
+		  <input type="text" class="liffinput" name="discom85" maxlength="30" id="txtDiscom85" onchange="changeData()">
+		</td>		
+        </tr>
+        <tr>
+          <th class="table_data_th">不快指数86~：</th>
+		<td class="table_data_td">
+		  <input type="text" class="liffinput" name="discom85" maxlength="30" id="txtDiscom85" onchange="changeData()">
+		</td>		
+        </tr>
+	      
         <tr>
           <th class="table_data_th">余白：</th>
 		<td class="table_data_td">
