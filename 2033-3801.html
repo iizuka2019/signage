@@ -87,7 +87,7 @@ $(function(){
             document.getElementById("statusMan").innerHTML = "いま、すわってないよー"
         }else{
             document.getElementById("statusMan").innerHTML = "いま、すわってるよ。"
-            document.getElementById("txtSittingTime").innerHTML = snapshot.child("iSittingTime").val()
+            document.getElementById("txtSittingTime").innerHTML = snapshot.child("iSittingTime").val() + "秒";
         }
 	      
 	var strVibration =  snapshot.child("iVibration").val();
