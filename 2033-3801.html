@@ -114,8 +114,11 @@ $(function(){
     });
     
 
-      
+	firebase.database().ref('/2033-3801/stsum/').on('value',function(snapshot) {
+            document.getElementById("txtStsum").innerHTML ="今日は" snapshot.child("20191217").val() + "秒 座ってるよ。";
 
+	});
+    
 
     </script>
     
@@ -200,6 +203,10 @@ myChatAll.update({
 		<tr>
 			<td colspan="4" align="center"><span id="statusMan"  ></span><output id="txtSittingTime">秒。</output></td>
 		</tr>
+		<tr>
+			<td colspan="4" align="center"><output id="txtStsum">今日の合計は0秒です。</output></td>
+		</tr>
+		
 	</table>		
     <hr />
 </p>
