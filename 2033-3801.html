@@ -115,7 +115,7 @@ $(function(){
     
 
 	firebase.database().ref('/2033-3801/stsum/').on('value',function(snapshot) {
-            document.getElementById("txtStsum").innerHTML ="今日は" snapshot.child("20191217").val() + "秒 座ってるよ。";
+            document.getElementById("txtStsum").innerHTML ="今日は" + snapshot.child("20191217").val() + "秒 座ってるよ。";
 
 	});
     
