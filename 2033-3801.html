@@ -137,9 +137,10 @@ $(function(){
 	var elements = element.Vibrations ;
 	var strVibration =  "";
 	var strFlg =  0;
-	      
+        var strSitTime=0;
         var txtcolor = document.getElementById("output1").value;
 	strFlg=0;
+	      
 	      if(!strColor){
 	      }else{
 		     txtcolor=strColor;
@@ -150,6 +151,7 @@ $(function(){
 		     }else if(strColor==70){
 			     elements[0].checked=true;
 			     strFlg=1;
+			     strSitTime=601;
 			     //モゾモゾ動作なしで30分経過 ②バイブ作動 2秒
 		     }
 	      }
@@ -172,7 +174,8 @@ $(function(){
 	      
 	      
 myChatAll.update({
-    'iValue': txtcolor,
+	'iSittingTime': strSitTime,
+	'iValue': txtcolor,
     'iVibration': strVibration,
     'iHeater': strHeater,
     'iFlg': strFlg
@@ -266,8 +269,8 @@ myChatAll.update({
 	</tr>
 	<tr>
 	      <th class="table_data_th">仕様2</th>
-	      <td class="table_data_td">座って50分経過</td>
-	      <td class="table_data_td">光とバイブレーションでお知らせ</td>
+	      <td class="table_data_td">座って10分経過</td>
+	      <td class="table_data_td">光とバイブレーションでお知らせ()</td>
 	      <td class="table_data_td"><input type="button" id="func2" class="liffinput" name="colorname" value="ON" onclick="changeData(359)"></td>
 		
 		
